@@ -1,22 +1,22 @@
-var concat = require('gulp-concat')
-var connect = require('gulp-connect')
-var gulp = require('gulp')
-var gutil = require('gulp-util')
-var inject = require('gulp-inject')
-var plumber = require('gulp-plumber')
-var rimraf = require('rimraf')
-var sass = require('gulp-sass')
-var sourcemaps = require('gulp-sourcemaps')
-var svgmin = require('gulp-svgmin')
-var svgstore = require('gulp-svgstore')
-var uglify = require('gulp-uglify')
+var concat = require('gulp-concat');
+var connect = require('gulp-connect');
+var gulp = require('gulp');
+var gutil = require('gulp-util');
+var inject = require('gulp-inject');
+var plumber = require('gulp-plumber');
+var rimraf = require('rimraf');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var svgmin = require('gulp-svgmin');
+var svgstore = require('gulp-svgstore');
+var uglify = require('gulp-uglify');
 
 
 //
 // Variables
 //
 var srcDir = './lib';
-var distDir = './build';
+var distDir = './demo/build';
 var isDebug = !gutil.env.prod;
 
 //
@@ -77,11 +77,7 @@ gulp.task('scripts', function () {
     srcDir + '/js/core/bootstrap.js',
     srcDir + '/js/core/darkroom.js',
     srcDir + '/js/core/*.js',
-    // srcDir + '/js/plugins/*.js',
-    srcDir + '/js/plugins/darkroom.history.js',
-    srcDir + '/js/plugins/darkroom.rotate.js',
-    srcDir + '/js/plugins/darkroom.crop.js',
-    srcDir + '/js/plugins/darkroom.save.js',
+    srcDir + '/js/plugins/*.js'
   ];
 
   gulp.src(files)
